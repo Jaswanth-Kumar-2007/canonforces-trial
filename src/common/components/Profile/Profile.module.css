@@ -1,0 +1,622 @@
+.profilePage {
+  min-height: 100vh;
+  margin-top: -1rem;
+  padding: 0 1.5rem 3rem;
+  font-family: inherit;
+  background-color: #f8fafc;
+  background-image:
+    radial-gradient(#e2e8f0 1px, transparent 1px),
+    linear-gradient(to right, #f1f5f9 1px, transparent 1px),
+    linear-gradient(to bottom, #f1f5f9 1px, transparent 1px);
+  background-size: 40px 40px, 100px 100px, 100px 100px;
+  color: #1e293b;
+}
+
+.mainContent {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.topSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.headerRow {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.identityAndStats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  width: 100%;
+}
+
+.profileCard {
+  background: white;
+  border: 1px solid #f1f5f9;
+  border-radius: 28px;
+  padding: 1.5rem 2rem;
+  margin-top: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.profileCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+}
+
+.avatarWrapper {
+  margin-bottom: 1.25rem;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 32px;
+  border: 4px solid white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  background: white;
+}
+
+.profileIdentity {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.identityLeft {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.userRegistry {
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.identityRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.username {
+  font-size: 1.65rem;
+  font-weight: 950;
+  letter-spacing: -0.05em;
+  color: #0f172a;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.fullname {
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.badgeArray {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.levelBadge,
+.streakBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.levelBadge {
+  background: #f0f9ff;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.streakBadge {
+  background: #fff7ed;
+  color: #c2410c;
+  border: 1px solid #fed7aa;
+}
+
+.badgeText {
+  line-height: 1;
+}
+
+.editButton {
+  background: #0f172a;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-left: 1rem;
+}
+
+.statsRow {
+  width: 100%;
+  margin-top: 2.5rem;
+}
+
+.statsGrid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2.5rem;
+  width: 100%;
+}
+
+.statModule {
+  background: white;
+  border: 1px solid #f1f5f9;
+  border-radius: 20px;
+  padding: 1.15rem 1.75rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3.25rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-width: 180px;
+}
+
+.statModule:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+}
+
+.statIcon {
+  color: #3b82f6;
+  background: #eff6ff;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+}
+
+.statValue {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1;
+  font-family: ui-monospace, SFMono-Regular, Monaco, monospace;
+}
+
+.statLabel {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.15rem;
+}
+
+/* Mini Codeforces Portfolio */
+.miniCfModule {
+  background: #1e293b;
+  color: white;
+  border-radius: 24px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+.miniCfModule::after {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -20%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+}
+
+.cfHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 2;
+}
+
+.cfHandle {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #60a5fa;
+}
+
+.cfRank {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #94a3b8;
+  letter-spacing: 0.1em;
+}
+
+.cfPointsGrid {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  z-index: 2;
+}
+
+.cfPointItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.cfPointValue {
+  font-size: 1.6rem;
+  font-weight: 800;
+  font-family: ui-monospace, SFMono-Regular, Monaco, monospace;
+}
+
+.cfPointLabel {
+  font-size: 0.65rem;
+  color: #64748b;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-top: 0.25rem;
+}
+
+.cfFooter {
+  font-size: 0.75rem;
+  color: #475569;
+  margin-top: auto;
+  z-index: 2;
+}
+
+/* --- Bottom Section Layout --- */
+.bottomSection {
+  display: grid;
+  grid-template-columns: auto 1fr 340px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* Performance Stack (Central Column) */
+.performanceStack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.separateAccentImg {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.08));
+}
+
+.mascotWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  width: 100%;
+  min-width: 140px;
+  height: 100%;
+  max-height: 450px;
+  overflow: hidden;
+}
+
+.activityPanel {
+  background: white;
+  border-radius: 28px;
+  padding: 1.25rem 1.5rem;
+  border: 1px solid #f1f5f9;
+  width: fit-content;
+}
+
+.sidebarStack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.gridModule {
+  background: white;
+  border-radius: 24px;
+  padding: 1.25rem;
+  border: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.navyCard {
+  background: #1e293b !important;
+  color: white !important;
+  border-color: #334155;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+}
+
+.navyCard .moduleTitle {
+  color: white !important;
+}
+
+.navyCard .calendarDay:not(.active) {
+  background: rgba(255, 255, 255, 0.05);
+  color: #94a3b8;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navyCard .tipsSection {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+.moduleTitle {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.submissionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 480px;
+  max-height: 300px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+/* Custom Scrollbar */
+.submissionsList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.submissionsList::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+.submissionsList::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.submissionsList::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.submissionCard {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #f1f5f9;
+  padding: 0.85rem 1rem;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.submissionCard:hover {
+  border-color: #10b981;
+  background: #fcfcfc;
+}
+
+.submissionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.problemName {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+  letter-spacing: -0.01em;
+}
+
+.statusIcon {
+  color: #10b981;
+}
+
+.subMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.dotSeparator {
+  color: #cbd5e1;
+  font-size: 0.7rem;
+}
+
+/* Persistence Module (Calendar) */
+.calendarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.monthName {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.yearName {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #64748b;
+}
+
+.dayLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #475569;
+  padding-bottom: 0.25rem;
+}
+
+.calendarContainer {
+  width: 100%;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.calendarDayEmpty {
+  aspect-ratio: 1;
+}
+
+.calendarDay {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: #f1f5f9;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #94a3b8;
+  transition: all 0.2s;
+}
+
+.calendarDay.active {
+  background: #10b981;
+  color: white;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.tipsSection {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* Quiz Performance Module */
+.quizStatGrid {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.quizStatItem {
+  flex: 1;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 12px;
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  transition: all 0.2s ease;
+}
+
+.quizStatItem:hover {
+  background: white;
+  border-color: #3b82f644;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  transform: translateY(-2px);
+}
+
+.quizStatLabel {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #64748b;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.quizStatValue {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #0f172a;
+  font-family: ui-monospace, SFMono-Regular, Monaco, monospace;
+}
+
+/* Responsiveness */
+@media (max-width: 1280px) {
+  .topSection {
+    grid-template-columns: 280px 1fr;
+  }
+
+  .miniCfModule {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 900px) {
+  .topSection {
+    grid-template-columns: 1fr;
+  }
+
+  .profileCard,
+  .miniCfModule {
+    grid-column: span 1;
+  }
+
+  .bottomSection {
+    grid-template-columns: 1fr;
+  }
+}

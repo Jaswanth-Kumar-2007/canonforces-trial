@@ -1,0 +1,72 @@
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(120deg, #f8fafc 0%, #fffbe6 100%);
+}
+
+.container {
+  border: none;
+  box-shadow: 0 6px 32px 0 rgba(0,0,0,0.08);
+  background: #fff;
+}
+
+.login__form > h3 {
+  font-size: 30px;
+  font-family: Poppins, sans-serif;
+}
+
+.login__form > p {
+  margin-top: 5px;
+  font-size: 15px;
+  color: rgb(89, 89, 89);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.login__button {
+    background-color: #f6c606; /* Tailwind blue-600 */
+    color: #fff;
+    border: none;
+    font-family: poppins;
+    font-size: 15px;
+}
+
+
+.button_blue {
+    width: 140px;
+    background-color: rgb(40, 101, 198);
+    border: none;
+    color: #ffffff;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  position: relative;
+}
+
+.mail__icon,
+.lock__icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.7rem;
+  font-size: 1.3em;
+  color: #bdbdbd;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    border-radius: 1.2rem;
+  }
+  .login__form {
+    width: 100% !important;
+    padding: 2rem 1rem !important;
+  }
+}

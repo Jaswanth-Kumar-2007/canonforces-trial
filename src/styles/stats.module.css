@@ -1,0 +1,434 @@
+/* ==========================================================================
+   Main Page Layout & Theme
+   ========================================================================== */
+.statsPageWrapper {
+  padding: 2rem 3rem;
+  min-height: 100vh;
+  background-color: #f8f9fa; /* Light grey background for better card contrast */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* ==========================================================================
+   Platform Tabs
+   ========================================================================== */
+.platformTabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.tabButton {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #6c757d;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.tabButton::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.tabButton:hover {
+  color: #0056b3;
+}
+
+.tabButton.activeTab {
+  color: #007bff;
+}
+
+.tabButton.activeTab::after {
+  transform: scaleX(1);
+}
+
+/* ==========================================================================
+   Header & Controls
+   ========================================================================== */
+.headerSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.headerMainContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #212529;
+  margin-bottom: 0.5rem;
+}
+
+.pageSubtitle {
+  font-size: 1.1rem;
+  color: #6c757d;
+}
+
+.headerImage {
+  flex-shrink: 0;
+}
+
+.controlsSection {
+  margin-top: 1.5rem;
+}
+
+.floatingInputBar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.floatingInputBar:focus-within {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.compareBtn, .clearBtn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.compareBtn {
+  background: #007bff;
+  color: white;
+}
+.compareBtn:hover {
+  background: #0056b3;
+}
+
+.clearBtn {
+  background: #6c757d;
+  color: white;
+}
+.clearBtn:hover {
+  background: #5a6268;
+}
+
+/* ==========================================================================
+   Stat Cards Grid
+   ========================================================================== */
+.statCardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.statCard {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  min-width: 0;
+}
+
+.statCardTitle {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #6c757d;
+  margin: 0 0 0.5rem 0;
+}
+
+.statCardValue {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #212529;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.statCardSubValue {
+  font-size: 0.85rem;
+  color: #495057;
+  margin: 0.25rem 0 0 0;
+}
+
+.delta {
+    font-size: 1rem;
+    font-weight: 600;
+}
+.deltaPositive {
+    color: #28a745;
+}
+.deltaNegative {
+    color: #dc3545;
+}
+
+/* ==========================================================================
+   Insights Card
+   ========================================================================== */
+.insightsCard {
+    background: linear-gradient(135deg, #e3f2fd, #e8eaf6);
+    border: 1px solid #d1d9e6;
+    border-radius: 16px;
+    padding: 1.5rem 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.insightsTitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    color: #343a40;
+}
+
+.insightsCard ul {
+    list-style-type: '✓  ';
+    padding-left: 1.5rem;
+    margin: 0;
+    color: #495057;
+}
+
+.insightsCard li {
+    margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   Dashboard & Chart Cards
+   ========================================================================== */
+.dashboardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.chartCard {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  min-height: 450px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.chartCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.chartHeader {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.chartTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #343a40;
+  margin: 0;
+}
+
+.chartContainer {
+  padding: 1.5rem;
+  flex-grow: 1;
+  height: 350px;
+}
+
+/* ==========================================================================
+   Skeleton Loader
+   ========================================================================== */
+.skeleton {
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  border-radius: 8px;
+  animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* ==========================================================================
+   Export Section
+   ========================================================================== */
+.exportSection {
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.exportButton {
+    background: #28a745;
+    color: white;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.exportButton:hover {
+    background: #218838;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Responsive Design
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .dashboardGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .statsPageWrapper {
+    padding: 1.5rem;
+  }
+  .headerSection {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+  .pageTitle {
+    font-size: 2rem;
+  }
+  .floatingInputBar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+}
+
+
+.splitChart {
+  grid-column: 1 / -1; /* Makes the card span both columns */
+  min-height: 500px;
+}
+
+.difficultyChartContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1.5rem;
+  gap: 2rem;
+  flex-grow: 1;
+}
+
+.doughnutWrapper {
+  flex: 1;
+  max-width: 320px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.chartLabel {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #495057;
+  text-align: center;
+}
+
+/* ... at the end of the Responsive Design section ... */
+@media (max-width: 768px) {
+  .difficultyChartContainer {
+    flex-direction: column;
+  }
+  .splitChart {
+    min-height: 650px;
+  }
+  .difficultyChartContainer {
+    flex-direction: column;
+    align-items: center; /* Center items when stacked vertically */
+  }
+  .splitChart {
+    min-height: 750px; /* Adjust height for vertical stacking */
+  }
+}
+
+
+.splitChart {
+  grid-column: 1 / -1; /* Makes the card span both columns */
+  min-height: 480px; /* Adjusted height */
+}
+
+.difficultyChartContainer {
+  display: flex;
+  justify-content: space-around;
+  /* Use align-items: stretch to make children fill the height */
+  align-items: stretch; 
+  padding: 1.5rem;
+  gap: 2rem;
+  flex-grow: 1;
+}
+
+.doughnutWrapper {
+  flex: 1; /* Allow wrapper to grow */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  /* Remove fixed height from here */
+}
+
+
+/* ==========================================================================
+   ADD this NEW rule to your CSS file
+   ========================================================================== */
+
+.doughnutCanvasContainer {
+  position: relative;
+  /* Define a stable width and height for the chart's direct parent */
+  width: 100%;
+  height: 280px; 
+}

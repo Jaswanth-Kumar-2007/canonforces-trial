@@ -1,0 +1,14 @@
+export const HOME = "/";
+export const LOGIN = "/login";
+export const SIGNUP = "/signup";
+export const CONTESTS_LIST = "/contests-list";
+export const CONTESTS = "/contests";
+export const DASHBOARD = "/dashboard";
+export const USERS = "/users";
+export const NOT_FOUND = "/not-found";
+export const PROFILE = "/user/:id";
+export const STATS = "/stats";
+export const POTD = "/potd";
+export const QUIZ = "/quiz";
+export const NOTIFICATIONS = "/notifications";
+export const LEADERBOARD = "/leaderboard";
