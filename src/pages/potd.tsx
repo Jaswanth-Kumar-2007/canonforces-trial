@@ -105,9 +105,14 @@ const POTDPage: React.FC = () => {
     fetchPOTD();
 
     const currentStartOfWeek = getStartOfWeek(new Date());
+    // const weeklyQ = query(
+    //   collection(db, "users"),
+    //   where("lastWeeklyResetDate", "==", currentStartOfWeek)
+    // );
+
     const weeklyQ = query(
       collection(db, "users"),
-      where("lastWeeklyResetDate", "==", currentStartOfWeek)
+      where("weeklyPotdSolves", ">=", 1)
     );
     const unsubWeekly = onSnapshot(
       weeklyQ,
@@ -188,7 +193,12 @@ const POTDPage: React.FC = () => {
       const newStreak = currentUserData.lastSolvedDate === yesterdayStr ? (currentUserData.streak || 0) + 1 : 1;
 
       const currentStartOfWeek = getStartOfWeek(new Date());
-      const newWeeklySolves = currentUserData.lastWeeklyResetDate === currentStartOfWeek ? (currentUserData.weeklyPotdSolves || 0) + 1 : 1;
+
+      // const newWeeklySolves = currentUserData.lastWeeklyResetDate === currentStartOfWeek ? (currentUserData.weeklyPotdSolves || 0) + 1 : 1;
+
+      // Changes for the Weekly Count Addition
+
+      const newWeeklySolves = (currentUserData.weeklyPotdSolves || 0) + 1;
 
       const resolvedUsername =
         userData.username ||
@@ -373,7 +383,7 @@ const POTDPage: React.FC = () => {
 
               <div className={styles.sidebarCard}>
                 <div className={styles.sidebarHeader}>
-                  <h3 className={styles.sidebarTitle}><FiTrendingUp style={{ color: "#8b5cf6" }} /> Weekly Top</h3>
+                  <h3 className={styles.sidebarTitle}><FiTrendingUp style={{ color: "#8b5cf6" }} /> Leaderboard Top 🎉 </h3>
                   <span className={styles.countBadge}>{topWeeklySolvers.length}</span>
                 </div>
                 <ul className={styles.solversList}>
