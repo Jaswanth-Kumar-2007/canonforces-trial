@@ -2,6 +2,7 @@ import Header from "../common/components/Header/Header";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import Footer from "../common/components/Footer/Footer";
+import { useEffect,useState } from "react";
 import {
   BsArrowRightCircle,
   BsTrophy,
@@ -23,6 +24,19 @@ const DynamicFooter = dynamic(() => import("../common/components/Footer/Footer")
 });
 
 export default function Home() {
+  const [userDetail, setUserDetail] = useState<any>(null);
+
+  useEffect(() => {
+      try {
+          const data = localStorage.getItem("authUser");
+
+          if (data) {
+              setUserDetail(JSON.parse(data));
+          }
+      } catch (e) {
+          console.log(e);
+      }
+  }, []);
   return (
     <div className="flex flex-col w-full items-center">
       <DynamicHeader />
@@ -45,14 +59,14 @@ export default function Home() {
             </p>
             <div className="flex flex-row gap-5 w-full">
               {/* Explore Button*/}
-              <Link href="/signup">
+              <Link href={(userDetail)?"/dashboard":"/login"}>
                 <button className={`${styles.button_blue} px-8 py-3 rounded-xl shadow-lg transition-all duration-200 hover:scale-105`}>
                   Explore
                 </button>
               </Link>
 
               {/* Dashboard Button*/}
-              <Link href="/signup" className="w-1/2">
+              <Link href={(userDetail)?"/dashboard":"/login"} className="w-1/2">
                 <button className="w-full bg-white hover:bg-gray-50 text-gray-900 border border-gray-100 font-bold px-8 py-3 rounded-xl shadow-sm transition-all duration-200 hover:scale-105 flex items-center justify-center gap-3 group">
                   Dashboard
                   <BsArrowRightCircle size={"1.3em"} className="transition-transform duration-200 group-hover:translate-x-1" />
