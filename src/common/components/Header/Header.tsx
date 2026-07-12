@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <>
       <div className={`relative flex w-10/12 p-5 fc-black font-light max-w-screen-2xl mx-auto items-center`}>
-        <div className="absolute -left-12">
+        <div className="absolute">
           <Link href={ROUTES.HOME} className="flex items-center gap-3">
             <Image
               src="/images/logo.png"
@@ -52,11 +52,11 @@ export default function Header() {
           <div className="flex items-center gap-10">
               {(userDetail)?
               (
-              <ul className="flex flex-row items-center gap-8 pr-20">
+              <ul className="flex flex-row items-center gap-8">
                 <li className="text-gray-dark hover:text-black transform hover:-translate-y-0.5"><Link href={ROUTES.DASHBOARD}> Dashboard : {userDetail.displayName} </Link></li>
                 </ul>
                 ) :
-              (<ul className="flex flex-row items-center gap-8 pr-20">
+              (<ul className="flex flex-row items-center gap-8">
                 <li> <Link href={ROUTES.LOGIN}> Login </Link> </li>
                 <li> <Link href={ROUTES.SIGNUP}> Signup </Link> </li> 
               </ul>

@@ -269,9 +269,10 @@ export default function Profile({ userId }: ProfileProps) {
 
                   {isOwnProfile && (
                     <button className={styles.editButton} onClick={handleEditToggle}>
-                      <HiPencilSquare size={16} /> EDIT
+                      {(isEditing) ? (<>Scroll Down 👇</>):<><HiPencilSquare size={16} /> EDIT</>}
                     </button>
                   )}
+
                 </div>
               </div>
 
@@ -434,24 +435,24 @@ export default function Profile({ userId }: ProfileProps) {
               {uploadError && <div className={styles.errorMessage}>{uploadError}</div>}
 
               <div className={styles.formGroup}>
-                <label>Full Name</label>
+                <label>Full Name</label><br/>
                 <input type="text" name="fullname" value={editForm.fullname} onChange={handleInputChange} />
               </div>
 
               <div className={styles.formGroup}>
-                <label>E-mail</label>
+                <label>E-mail</label><br/>
                 <input type="email" name="email" value={editForm.email} onChange={handleInputChange} />
               </div>
 
               <div className={styles.formGroup}>
-                <label>Avatar</label>
+                <label>Avatar</label><br/>
                 <input type="file" accept="image/*" onChange={handleImageChange} />
               </div>
 
               <div className={styles.formActions}>
                 <button className={styles.cancelBtn} onClick={handleEditToggle} disabled={loading}>Abort</button>
                 <button className={styles.saveBtn} onClick={handleSave} disabled={loading}>
-                  {loading ? 'UPLOADING...' : 'SAVE CHANGES'}
+                  {loading ? 'Uploading...' : 'Save Changes'}
                 </button>
               </div>
             </div>
