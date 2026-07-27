@@ -56,9 +56,9 @@ export default function Header() {
                 <li className="text-gray-dark hover:text-black transform hover:-translate-y-0.5"><Link href={ROUTES.DASHBOARD}> Dashboard : {userDetail.displayName} </Link></li>
                 </ul>
                 ) :
-              (<ul className="flex flex-row items-center gap-8">
+              (<ul className="flex flex-row items-center gap-8 pr-20">
+                <li> <Link href={ROUTES.SIGNUP}> Signup </Link> </li>
                 <li> <Link href={ROUTES.LOGIN}> Login </Link> </li>
-                <li> <Link href={ROUTES.SIGNUP}> Signup </Link> </li> 
               </ul>
               )
             }
