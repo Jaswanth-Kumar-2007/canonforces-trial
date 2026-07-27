@@ -27,8 +27,8 @@ module.exports = {
         '4xl': '2rem',
       },
       screens:{
-        'mobile':'480px',
-        'tablet':'640px',
+        'mobile':'300px',
+        'tablet':'768px',
         'laptop':'1024px',
         'desktop':'1280px',
       },

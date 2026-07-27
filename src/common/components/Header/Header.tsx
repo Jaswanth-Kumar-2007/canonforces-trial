@@ -27,7 +27,7 @@ export default function Header() {
   
   return (
     <>
-      <div className={`relative flex w-10/12 p-5 fc-black font-light max-w-screen-2xl mx-auto items-center`}>
+      <div className={`relative flex p-5 fc-black font-light  items-center sm:w-screen justify-between w-full lg:w-10/12 max-w-screen-2xl`}>
         <div className="absolute">
           <Link href={ROUTES.HOME} className="flex items-center gap-3">
             <Image
@@ -49,7 +49,7 @@ export default function Header() {
             </ul>
           </div>
           
-          <div className="flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-10">
               {(userDetail)?
               (
               <ul className="flex flex-row items-center gap-8">
