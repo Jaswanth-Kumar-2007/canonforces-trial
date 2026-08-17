@@ -205,6 +205,11 @@ export default function Signup() {
 
   return (
     <div className={styles.signup}>
+        <Link href="/">
+            <button className="absolute top-5 left-5 w-auto bg-white hover:bg-gray-extra-light text-gray-900 border border-gray-100 font-bold px-8 py-3 text=align-center rounded-xl">
+                Back
+            </button>
+        </Link>
         <div className={`${styles.container} flex flex-col md:flex-row w-11/12 md:w-9/12 shadow-xl rounded-2xl bg-white overflow-hidden`}>
             {/* Left Side - Form */}
             <div className={`${styles.signup__form} w-full md:w-6/12 flex flex-col items-center justify-center py-10 px-6`}>
@@ -284,7 +289,7 @@ export default function Signup() {
                     </div>
                     <div className="w-full mt-6 flex flex-col gap-3">
                         <button
-                            className={`bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg h-11 transition-all duration-150 shadow-md ${isInvalid || loading ? "opacity-60 cursor-not-allowed" : ""}`}
+                            className={`bg-blue-600 hover:bg-blue-700 text-black font-semibold rounded-lg h-11 transition-all duration-150 shadow-md ${isInvalid || loading ? "opacity-60 cursor-not-allowed" : ""}`}
                             disabled={isInvalid || loading}
                             type="submit"
                         >
