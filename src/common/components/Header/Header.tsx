@@ -27,43 +27,47 @@ export default function Header() {
   
   return (
     <>
-      <div className={`relative flex p-5 fc-black font-light  items-center sm:w-screen justify-between w-full lg:w-10/12 max-w-screen-2xl`}>
-        <div className="absolute">
+      <div className="relative flex p-2 mb-3 mt-3 fc-black font-light items-center sm:w-screen justify-between w-full lg:w-10/12 max-w-screen-2xl lg:p-5 lg:mb-0 lg:mt-0">
+        <div className="absolute mr-4 lg:m-0">
           <Link href={ROUTES.HOME} className="flex items-center gap-3">
             <Image
               src="/images/logo.png"
               alt="CanonForces Logo"
               width={65}
               height={65}
-              className="object-contain transition-transform duration-300 hover:scale-110"
+              className="w-12 h-12 lg:w-[65px] lg:h-[65px] object-contain transition-transform duration-300 hover:scale-110"
               priority
             />
           </Link>
         </div>
-        <nav className="flex flex-row w-full items-center justify-between pl-16">
+
+        <nav className="flex flex-row w-full items-center justify-center lg:justify-between pl-16 ml-2 lg:ml-0">
+
           <div className="flex-1 flex justify-center">
             <ul className="flex flex-row">
-              <li className="font-semibold text-xl tracking-wide"> 
+              <li className="font-semibold text-sm tracking-wide lg:text-xl"> 
                 <Link href={ROUTES.HOME}> LEARN & CODE </Link> 
               </li>
             </ul>
           </div>
           
-          <div className="hidden lg:flex items-center gap-10">
+          <div className="flex items-center gap-3 lg:gap-10">
               {(userDetail)?
               (
-              <ul className="flex flex-row items-center gap-8">
+              <ul className="text-xs flex flex-row items-center gap-3 lg:text-base lg:gap-8">
                 <li className="text-gray-dark hover:text-black transform hover:-translate-y-0.5"><Link href={ROUTES.DASHBOARD}> Dashboard : {userDetail.displayName} </Link></li>
-                </ul>
+              </ul>
                 ) :
-              (<ul className="flex flex-row items-center gap-8 pr-20">
-                <li> <Link href={ROUTES.SIGNUP}> Signup </Link> </li>
+              (<ul className="text-xs flex flex-row items-center gap-3 lg:text-base lg:gap-8 lg:pr-20">
                 <li> <Link href={ROUTES.LOGIN}> Login </Link> </li>
+                <li> <Link href={ROUTES.SIGNUP}> Signup </Link> </li>
               </ul>
               )
             }
           </div>
+
         </nav>
+
       </div>
     </>
   )
