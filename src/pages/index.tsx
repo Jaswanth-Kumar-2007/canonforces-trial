@@ -38,7 +38,7 @@ export default function Home() {
       }
   }, []);
   return (
-    <div className="flex flex-col w-screen items-center">
+    <div className="flex flex-col w-full items-center">
       <DynamicHeader />
       <hr className="flex w-9/12 h-px fc-hr border-0" />
       <main className="flex flex-col w-full items-center p-0">
