@@ -5,8 +5,6 @@ import { useEffect,useState } from "react";
 import * as ROUTES from "../../../constants/routes";
 import NotificationBell from "../NotificationBell/NotificationBell";
 import styles from "./Header.module.css";
-import { exitCode } from "process";
-import { error } from "console";
 
 
 export default function Header() {
@@ -27,7 +25,7 @@ export default function Header() {
   
   return (
     <>
-      <div className="relative flex p-2 mb-3 mt-3 fc-black font-light items-center sm:w-screen justify-between w-full lg:w-10/12 max-w-screen-2xl lg:p-5 lg:mb-0 lg:mt-0">
+      <div className="relative flex p-2 mb-3 mt-3 fc-black font-light items-center sm:w-full justify-between w-full lg:w-10/12 max-w-screen-2xl lg:p-5 lg:mb-0 lg:mt-0">
         <div className="absolute mr-4 lg:m-0">
           <Link href={ROUTES.HOME} className="flex items-center gap-3">
             <Image
