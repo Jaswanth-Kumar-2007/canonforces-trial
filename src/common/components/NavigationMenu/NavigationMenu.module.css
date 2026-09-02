@@ -201,4 +201,8 @@
   .navbar ul li a span {
     font-size: 0.85rem;
   }
+
+  .navigation{
+    display: none;
+  }
 }

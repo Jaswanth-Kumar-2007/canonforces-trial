@@ -35,6 +35,8 @@ export default function App({ Component, pageProps }: AppProps) {
   // Check if current route is in the list for showing the layout
   const showLayout = !noLayoutRoutes.includes(router.pathname);
 
+  const mobileMode = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
   useEffect(() => {
     // onAuthStateChanged returns an unsubscribe function. We'll use it for cleanup.
     const unsubscribe = onAuthStateChanged(auth, (authUser: any) => {
@@ -71,7 +73,7 @@ export default function App({ Component, pageProps }: AppProps) {
           `}</style>
       <SocketProvider>
         <Toaster position="top-center" richColors />
-        {(showLayout && !navigator.userAgent.includes("Android")) ? (
+        {(showLayout && !mobileMode) ? (
           <UserContext.Provider value={user}>
             <Layout>
               <Component {...pageProps} />
