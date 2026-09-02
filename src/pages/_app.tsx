@@ -71,7 +71,7 @@ export default function App({ Component, pageProps }: AppProps) {
           `}</style>
       <SocketProvider>
         <Toaster position="top-center" richColors />
-        {showLayout ? (
+        {(showLayout && !navigator.userAgent.includes("Android")) ? (
           <UserContext.Provider value={user}>
             <Layout>
               <Component {...pageProps} />

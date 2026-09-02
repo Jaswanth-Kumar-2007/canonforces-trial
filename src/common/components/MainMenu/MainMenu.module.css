@@ -422,3 +422,127 @@
   font-size: 0.95rem;
   margin: 0;
 } 
+
+.navbar{
+  display:none;
+}
+
+@media (max-width:480px){
+  .suggestions{
+    display: none;
+    width: 0%;
+  }
+
+  .teacherImg{
+    display: none;
+    width: 0%;
+  }
+
+  .languages_stat{
+    display: none;
+  }
+
+  .main{
+    background-color: #f7f8fa;
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    padding-top: 30px;
+    border-radius: 30px;
+    height: 100vh;
+  }
+
+  .questions,
+  .ranking,
+  .contest {
+    display: flex;
+    flex-direction: column;
+    background: rgb(102, 178, 245);
+    color: #ffffff;
+    height:20vh;
+    min-width: 0;
+    width:40vw;
+    border-radius: 20px;
+    padding: 2px;
+    align-items: center;
+    justify-content: center;
+    margin-left: 2px;
+    box-shadow: 0 4px 12px rgba(102, 178, 245, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .statbar{
+    font-size: 0.5rem;
+  }
+
+  .number{
+    font-size: 0.5rem;
+  }
+
+  .notification_icon{
+    margin-left: 20px;
+  }
+
+  .search > input {
+    width:100vw;
+  }
+
+  .potd_card{
+    width:85vw;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .potd_container {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .potd_badge{
+    margin-right: 10px;
+    font-size: 0.5rem;
+    padding: 4px;
+    width: 50vw;
+  }
+
+  .potd_date {
+    font-size: 0.5rem;
+    color: #6b7280;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+  }
+
+  .potd_snippet {
+    font-size: 0.6rem;
+  }
+
+  .potd_actions{
+    flex-direction: column;
+  }
+
+  .btn_primary,.btn_codeforces{
+    width:60vw;
+  }
+
+  .navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width:90vw;
+    font-size: 0.75rem;
+    gap:5px;
+    padding:10px;
+    margin-bottom:10px;
+    border:2px solid rgba(0, 0, 0, 0.24);
+    border-radius: 25px;
+  }
+
+  .navbar a{
+    border:1px solid grey;
+    border-radius: 25px;
+    padding: 1px;
+  }
+}

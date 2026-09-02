@@ -10,6 +10,7 @@ import Image from "next/image";
 import { getPOTD } from "../../../services/potd_fetch";
 import { doc, getDoc, onSnapshot } from "firebase/firestore";
 import { db } from "../../../lib/firebase";
+import Link from "next/link";
 
 const CACHE_KEY = "user_stats_cache";
 
@@ -100,9 +101,18 @@ export default function MainMenu() {
     }
   };
 
+  const { id } = router.query;
+
   return (
     <div className={styles.main}>
       <div className={styles.main_menu}>
+        <div className={styles.navbar}>
+          <Link href="/">Home</Link>
+          <Link href="/contests-list">Contests</Link>
+          <Link href="/leaderboard">Leaderboard</Link>
+          <Link href="/potd">POTD</Link>
+          <Link href={`/user/${id}`}>Profile</Link>
+        </div>
         <div className={styles.main_menu_header}>
           <div className={styles.search} onClick={() => router.push("/search")}>
             <RiSearch2Line className={styles.search_icon} size={"1.3em"} />
@@ -124,20 +134,20 @@ export default function MainMenu() {
             <div className={styles.stats}>
               <div className={styles.stats1}>
                 <div className={styles.questions}>
-                  <span className={styles.number}> {isMounted ? (userData?.rank ?? "pupil") : "..."} </span>  <span> Rank</span>
+                  <span className={styles.number}> {isMounted ? (userData?.rank ?? "pupil") : "..."} </span>  <span className={styles.statbar}> Rank</span>
                 </div>
                 <div className={styles.questions}>
-                  <span className={styles.number}> {isMounted ? (userData?.solved ?? "0") : "..."} </span>  <span>Problems Solved </span>
-                  <span className={styles.number}>{isMounted ? (userData?.attempt ?? "0") : "..."} </span>  <span>Submissions </span>
+                  <span className={styles.number}> {isMounted ? (userData?.solved ?? "0") : "..."} </span>  <span className={styles.statbar}>Problems Solved </span>
+                  <span className={styles.number}>{isMounted ? (userData?.attempt ?? "0") : "..."} </span>  <span className={styles.statbar}>Submissions </span>
                 </div>
 
               </div>
               <div className={styles.stats2}>
                 <div className={styles.ranking}>
-                  <span className={styles.number}> {isMounted ? (userData?.maxRating ?? "Rating") : "..."} </span> <span> Max Rating </span>
+                  <span className={styles.number}> {isMounted ? (userData?.maxRating ?? "Rating") : "..."} </span> <span className={styles.statbar}> Max Rating </span>
                 </div>
                 <div className={styles.contest}>
-                  <span className={styles.number}> {isMounted ? (userData?.contestsGiven ?? "0") : "..."} </span> <span> Contest played</span>
+                  <span className={styles.number}> {isMounted ? (userData?.contestsGiven ?? "0") : "..."} </span> <span className={styles.statbar}> Contest played</span>
                 </div>
               </div>
             </div>
