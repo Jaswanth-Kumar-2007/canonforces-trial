@@ -10,6 +10,7 @@ import { toast } from "sonner";
 import { checkCodeforcesSubmission } from "../services/codeforces_api";
 import { FiCheck, FiAward, FiExternalLink, FiZap, FiTarget, FiTrendingUp } from "react-icons/fi";
 import { BsLightningCharge } from "react-icons/bs";
+import Link from "next/link";
 
 interface Solver {
   uid: string;
@@ -278,6 +279,13 @@ const POTDPage: React.FC = () => {
     <div className={styles.pageContainer}>
       <main className={styles.main}>
         <div className={styles.container}>
+          <div className={styles.navbar}>
+            <Link href="/">Home</Link>
+            <Link href="/dashboard">Dashboard</Link>
+            <Link href="/contests-list">Contests</Link>
+            <Link href="/leaderboard">Leaderboard</Link>
+            <Link href="/potd">POTD</Link>
+          </div>
 
           <header className={styles.header}>
             <div className={styles.headerText}>

@@ -5,6 +5,7 @@ import { collection, query, getDocs, getDoc, doc } from "firebase/firestore";
 import { onAuthStateChanged, User } from "firebase/auth";
 import { db, auth } from "../lib/firebase";
 import { FaCoins, FaMedal, FaFire } from "react-icons/fa";
+import Link from "next/link";
 
 interface LeaderboardUser {
     uid: string;
@@ -128,7 +129,14 @@ export default function LeaderboardPage() {
 
             <div className={styles.contentWrapper}>
                 <div className={styles.mainContentRow}>
-                    <div style={{ flex: 1, minWidth: 0 }}>
+                    <div className={styles.navbar}>
+                        <Link href="/">Home</Link>
+                        <Link href="/dashboard">Dashboard</Link>
+                        <Link href="/contests-list">Contests</Link>
+                        <Link href="/leaderboard">Leaderboard</Link>
+                        <Link href="/potd">POTD</Link>
+                    </div>
+                    <div className={styles.leaderboardContent}>
                         <div className={styles.heroSection}>
                             <div>
                                 <h1 className={styles.heroTitle}>Global Rankings</h1>
@@ -160,7 +168,7 @@ export default function LeaderboardPage() {
                             <div className={styles.listHeader}>
                                 <div>Rank</div>
                                 <div>User</div>
-                                <div>{activeTab === "earners" ? "Coins" : "Solved"}</div>
+                                <div style={{ textAlign: "right" }}>{activeTab === "earners" ? "Coins" : "Solved"}</div>
                                 <div style={{ textAlign: "right" }}>Streak</div>
                             </div>
 

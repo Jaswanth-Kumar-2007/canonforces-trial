@@ -108,10 +108,10 @@ export default function MainMenu() {
       <div className={styles.main_menu}>
         <div className={styles.navbar}>
           <Link href="/">Home</Link>
+          <Link href="/dashboard">Dashboard</Link>
           <Link href="/contests-list">Contests</Link>
           <Link href="/leaderboard">Leaderboard</Link>
           <Link href="/potd">POTD</Link>
-          <Link href={`/user/${id}`}>Profile</Link>
         </div>
         <div className={styles.main_menu_header}>
           <div className={styles.search} onClick={() => router.push("/search")}>
