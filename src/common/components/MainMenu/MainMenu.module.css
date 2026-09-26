@@ -423,10 +423,6 @@
   margin: 0;
 } 
 
-.navbar{
-  display:none;
-}
-
 @media (max-width:480px){
   .suggestions{
     display: none;
@@ -524,25 +520,5 @@
 
   .btn_primary,.btn_codeforces{
     width:60vw;
-  }
-
-  .navbar{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width:90vw;
-    font-size: 0.7rem;
-    gap:4px;
-    padding:10px;
-    margin-bottom:10px;
-    border:2px solid rgba(0, 0, 0, 0.24);
-    border-radius: 25px;
-  }
-
-  .navbar a{
-    border:1px solid grey;
-    border-radius: 25px;
-    padding: 1px;
   }
 }

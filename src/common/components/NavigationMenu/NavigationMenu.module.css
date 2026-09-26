@@ -190,19 +190,20 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .navigation {
-    width: 12rem;
+    width: 6rem;
     padding: 1.2rem;
+    overflow-x: hidden;
   }
 
   .logo h3 {
     font-size: 1.1rem;
   }
 
-  .navbar ul li a span {
-    font-size: 0.85rem;
+  .navbar{
+    overflow-y:hidden;
   }
 
-  .navigation{
-    display: none;
+  .navbar ul li a span {
+    font-size: 0.85rem;
   }
 }

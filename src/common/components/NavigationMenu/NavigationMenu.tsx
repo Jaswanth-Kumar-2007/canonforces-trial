@@ -58,6 +58,8 @@ export default function NavigationMenu() {
     }
   };
 
+  const mobileMode = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
   return (
     <div className={styles.navigation}>
       <Link href={ROUTES.DASHBOARD} className={styles.logo}>
@@ -67,7 +69,7 @@ export default function NavigationMenu() {
           alt="Canonforces"
           src={"/images/logo.png"}
         />
-        <h3>Canonforces</h3>
+        {(!mobileMode) ? (<h3>Canonforces</h3>) : ""}
       </Link>
       <div className={styles.navbar}>
         <h4> Menu </h4>
@@ -75,43 +77,43 @@ export default function NavigationMenu() {
           <ul>
             <li className={isActive(ROUTES.DASHBOARD) ? styles.active : ''}>
               <Link href={ROUTES.DASHBOARD}>
-                <AiFillHome size={"1.5em"} /> <span>Home</span>
+                <AiFillHome size={"1.5em"} /> {(!mobileMode) ? (<span>Home</span>) : ""}
               </Link>
             </li>
             <li className={isActive(ROUTES.CONTESTS_LIST) ? styles.active : ''}>
               <Link href={ROUTES.CONTESTS_LIST}>
-                <BsTrophy size={"1.5em"} /> <span>Contests</span>
+                <BsTrophy size={"1.5em"} /> {(!mobileMode) ? (<span>Contests</span>) : ""}
               </Link>
             </li>
             <li className={isActive(ROUTES.STATS) ? styles.active : ''}>
               <Link href={ROUTES.STATS}>
-                <FaChartBar size={"1.5em"} /> <span>Compare</span>
+                <FaChartBar size={"1.5em"} /> {(!mobileMode) ? (<span>Compare</span>) : ""}
               </Link>
             </li>
             <li className={isActive(ROUTES.LEADERBOARD) ? styles.active : ''}>
               <Link href={ROUTES.LEADERBOARD}>
-                <FaAward size={"1.5em"} /> <span>Leaderboard</span>
+                <FaAward size={"1.5em"} /> {(!mobileMode) ? (<span>Leaderboard</span>) : ""}
               </Link>
             </li>
             <li className={isActive(ROUTES.CONTESTS) ? styles.active : ''}>
               <Link href={ROUTES.CONTESTS}>
-                <TbSwords size={"1.5em"} /> <span>Practice</span>
+                <TbSwords size={"1.5em"} /> {(!mobileMode) ? (<span>Practice</span>) : ""}
               </Link>
             </li>
             <li className={isActive(ROUTES.POTD) ? styles.active : ''}>
               <Link href={ROUTES.POTD}>
-                <FaRegLightbulb size="1.5em" /> <span>POTD</span>
+                <FaRegLightbulb size="1.5em" /> {(!mobileMode) ? (<span>POTD</span>) : ""}
               </Link>
             </li>
             <li className={isActive(ROUTES.QUIZ) ? styles.active : ''}>
               <Link href={ROUTES.QUIZ}>
-                <FaRegQuestionCircle size="1.5em" /> <span>Quiz</span>
+                <FaRegQuestionCircle size="1.5em" /> {(!mobileMode) ? (<span>Quiz</span>) : ""}
               </Link>
             </li>
             {isAdmin && (
               <li className={isActive('/admin/potd') ? styles.active : ''} style={{ marginTop: 'auto', borderTop: '1px solid #334155', paddingTop: '10px' }}>
                 <Link href="/admin/potd" style={{ color: '#f59e0b' }}>
-                  <FaCog size="1.5em" /> <span style={{ fontWeight: 'bold' }}>Admin Portal</span>
+                  <FaCog size="1.5em" /> {(!mobileMode) ? (<span style={{ fontWeight: 'bold' }}>Admin Portal</span>) : ""}
                 </Link>
               </li>
             )}

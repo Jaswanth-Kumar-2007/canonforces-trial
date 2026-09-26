@@ -10,7 +10,6 @@ import Image from "next/image";
 import { getPOTD } from "../../../services/potd_fetch";
 import { doc, getDoc, onSnapshot } from "firebase/firestore";
 import { db } from "../../../lib/firebase";
-import Link from "next/link";
 
 const CACHE_KEY = "user_stats_cache";
 
@@ -106,13 +105,6 @@ export default function MainMenu() {
   return (
     <div className={styles.main}>
       <div className={styles.main_menu}>
-        <div className={styles.navbar}>
-          <Link href="/">Home</Link>
-          <Link href="/dashboard">Dashboard</Link>
-          <Link href="/contests-list">Contests</Link>
-          <Link href="/leaderboard">Leaderboard</Link>
-          <Link href="/potd">POTD</Link>
-        </div>
         <div className={styles.main_menu_header}>
           <div className={styles.search} onClick={() => router.push("/search")}>
             <RiSearch2Line className={styles.search_icon} size={"1.3em"} />
