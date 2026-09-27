@@ -136,8 +136,8 @@ export default function NavigationMenu() {
           </button>
         </div>
       </div>
-      <div className={(!buttonbar) ? styles.layoutset : styles.layoutset2}>
-        <button onClick={() => setbuttonbar(!buttonbar)}><BsArrowRightCircleFill /></button>
+      <div className={(!layoutbar) ? styles.layoutset : styles.layoutset2}>
+        <button onClick={() => {setlayoutbar(!layoutbar);setbuttonbar(!buttonbar);}}><BsArrowRightCircleFill size={"1.5em"}/></button>
       </div>
     </div>
   );
