@@ -10,7 +10,7 @@
   border-right: 1px solid #f1f5f9;
   z-index: 100;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 1.6rem;
   overflow-y: auto;
 }
@@ -187,12 +187,59 @@
   background: #cbd5e1;
 }
 
+.layoutset{
+  position:fixed;
+  top:50vh;
+  left:15vw;
+}
+
+.layoutset2{
+  position:fixed;
+  top:50vh;
+  left:15vw;
+}
+
+.navigationmobile{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15rem;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.04);
+  border-right: 1px solid #f1f5f9;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  padding: 1.6rem;
+  overflow-y: auto;
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .navigation {
-    width: 6rem;
+    width:5rem;
     padding: 1.2rem;
     overflow-x: hidden;
+    display: flex;
+  }
+
+  .navigationmobile{
+    width:0.1rem;
+    padding: 0.1rem;
+    overflow-x: hidden;
+  }
+
+  .layoutset{
+    position:fixed;
+    top:50vh;
+    left:4.5rem;
+  }
+
+  .layoutset2{
+    position:fixed;
+    top:50vh;
+    left:1rem;
   }
 
   .logo h3 {
@@ -205,5 +252,9 @@
 
   .navbar ul li a span {
     font-size: 0.85rem;
+  }
+
+  .active{
+    width:10px;
   }
 }
