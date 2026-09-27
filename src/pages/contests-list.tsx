@@ -87,18 +87,13 @@ const ContestsList = () => {
   // Define tabs based on available data or defaults
   const tabs = ["all", "codeforces", "leetcode", "codechef", "atcoder", "hackerearth"];
 
+  const mobileMode = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
   return (
     <div className="flex min-h-screen bg-[#f7f8fa]">
-      <NavigationMenu />
+      {(!mobileMode) ? (<NavigationMenu />) : ("")}
       <main className={styles.main}>
         <div className={styles.container}>
-          <div className={styles.navbar}>
-            <Link href="/">Home</Link>
-            <Link href="/dashboard">Dashboard</Link>
-            <Link href="/contests-list">Contests</Link>
-            <Link href="/leaderboard">Leaderboard</Link>
-            <Link href="/potd">POTD</Link>
-          </div>
 
           {/* Header */}
           <div className={styles.header}>

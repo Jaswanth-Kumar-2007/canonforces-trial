@@ -214,7 +214,6 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .navigation {
-    width:5rem;
     padding: 1.2rem;
     overflow-x: hidden;
     display: flex;
@@ -224,20 +223,16 @@
     width:0.1rem;
     padding: 0.1rem;
     overflow-x: hidden;
+    position: fixed;
+    z-index: 100;
   }
 
   .layoutset{
     display: block;
     position:fixed;
-    top:50vh;
-    left:4.5rem;
-  }
-
-  .layoutset2{
-    display: block;
-    position:fixed;
-    top:50vh;
-    left:1rem;
+    top:1rem;
+    left: 1rem;
+    z-index: 101;
   }
 
   .logo h3 {
@@ -254,5 +249,12 @@
 
   .active{
     width:10px;
+  }
+
+  .backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 99;
+    background: rgba(0, 0, 0, 0.15);
   }
 }

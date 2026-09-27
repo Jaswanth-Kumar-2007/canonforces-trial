@@ -441,11 +441,17 @@
   .main{
     background-color: #f7f8fa;
     display: flex;
-    width: 100%;
-    padding: 20px;
+    width: 100vw;
+    padding:2px;
     padding-top: 30px;
     border-radius: 30px;
     height: 100vh;
+  }
+
+  .main_menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
 
   .questions,
@@ -470,19 +476,19 @@
   }
 
   .statbar{
-    font-size: 0.5rem;
+    font-size: 0.8rem;
   }
 
   .number{
-    font-size: 0.5rem;
+    font-size: 0.8rem;
   }
 
   .notification_icon{
-    margin-left: 20px;
+    margin-left: 2px;
   }
 
   .search > input {
-    width:100vw;
+    width:70vw;
   }
 
   .potd_card{
@@ -520,5 +526,22 @@
 
   .btn_primary,.btn_codeforces{
     width:60vw;
+  }
+
+  .main_menu_stats {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 40px;
+    margin-left: 5px;
+  }
+
+  .ranking {
+    background: rgb(220, 95, 68);
+    box-shadow: 0 4px 12px rgba(206, 86, 59, 0.15);
+  }
+
+  .ranking:hover {
+    box-shadow: 0 12px 28px rgba(206, 86, 59, 0.35);
   }
 }

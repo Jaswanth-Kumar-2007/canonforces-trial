@@ -123,19 +123,14 @@ export default function LeaderboardPage() {
         }
     }, [activeTab, currentUser, loadingAuth]);
 
+    const mobileMode = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
     return (
         <div className={styles.pageContainer}>
-            <NavigationMenu />
+            {(!mobileMode) ? (<NavigationMenu />) : ("")}
 
             <div className={styles.contentWrapper}>
                 <div className={styles.mainContentRow}>
-                    <div className={styles.navbar}>
-                        <Link href="/">Home</Link>
-                        <Link href="/dashboard">Dashboard</Link>
-                        <Link href="/contests-list">Contests</Link>
-                        <Link href="/leaderboard">Leaderboard</Link>
-                        <Link href="/potd">POTD</Link>
-                    </div>
                     <div className={styles.leaderboardContent}>
                         <div className={styles.heroSection}>
                             <div>

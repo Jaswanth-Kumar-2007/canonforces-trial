@@ -14,8 +14,8 @@ import { FaRegLightbulb, FaCog } from 'react-icons/fa';
 import { signOut, onAuthStateChanged } from "firebase/auth";
 import { auth, db } from "../../../lib/firebase"; // Adjust path if needed
 import { doc, getDoc } from "firebase/firestore";
-import { useEffect, useState } from "react";
-import { BsArrowRightCircleFill } from "react-icons/bs";
+import { useEffect, useState,useRef } from "react";
+import { Menu } from "lucide-react";
 
 export default function NavigationMenu() {
   const router = useRouter();
@@ -64,8 +64,27 @@ export default function NavigationMenu() {
   const [buttonbar,setbuttonbar] = useState(true);
   const [layoutbar,setlayoutbar] = useState(true);
 
+  const sidebarRef = useRef(null);
+
   return (
-    <div className={(!buttonbar) ? styles.navigation : styles.navigationmobile}>
+    <>
+      {layoutbar && mobileMode && (
+          <div
+            className={styles.backdrop}
+            onClick={() => {
+              setlayoutbar(false);
+              setbuttonbar(true);
+            }}
+          />
+      )}
+      <div
+        ref={sidebarRef}
+        className={
+          (!buttonbar)
+            ? styles.navigation
+            : styles.navigationmobile
+        }
+      >
       <div>
         <Link href={ROUTES.DASHBOARD} className={styles.logo}>
           <Image
@@ -74,7 +93,7 @@ export default function NavigationMenu() {
             alt="Canonforces"
             src={"/images/logo.png"}
           />
-          {(!mobileMode) ? (<h3>Canonforces</h3>) : ""}
+          <h3>Canonforces</h3>
         </Link>
         <div className={styles.navbar}>
           <h4> Menu </h4>
@@ -82,43 +101,43 @@ export default function NavigationMenu() {
             <ul>
               <li className={isActive(ROUTES.DASHBOARD) ? styles.active : ''}>
                 <Link href={ROUTES.DASHBOARD}>
-                  <AiFillHome size={"1.5em"} /> {(!mobileMode) ? (<span>Home</span>) : ""}
+                  <AiFillHome size={"1.5em"} /><span>Home</span>
                 </Link>
               </li>
               <li className={isActive(ROUTES.CONTESTS_LIST) ? styles.active : ''}>
                 <Link href={ROUTES.CONTESTS_LIST}>
-                  <BsTrophy size={"1.5em"} /> {(!mobileMode) ? (<span>Contests</span>) : ""}
+                  <BsTrophy size={"1.5em"} /><span>Contests</span>
                 </Link>
               </li>
               <li className={isActive(ROUTES.STATS) ? styles.active : ''}>
                 <Link href={ROUTES.STATS}>
-                  <FaChartBar size={"1.5em"} /> {(!mobileMode) ? (<span>Compare</span>) : ""}
+                  <FaChartBar size={"1.5em"} /><span>Compare</span>
                 </Link>
               </li>
               <li className={isActive(ROUTES.LEADERBOARD) ? styles.active : ''}>
                 <Link href={ROUTES.LEADERBOARD}>
-                  <FaAward size={"1.5em"} /> {(!mobileMode) ? (<span>Leaderboard</span>) : ""}
+                  <FaAward size={"1.5em"} /><span>Leaderboard</span>
                 </Link>
               </li>
               <li className={isActive(ROUTES.CONTESTS) ? styles.active : ''}>
                 <Link href={ROUTES.CONTESTS}>
-                  <TbSwords size={"1.5em"} /> {(!mobileMode) ? (<span>Practice</span>) : ""}
+                  <TbSwords size={"1.5em"} /><span>Practice</span>
                 </Link>
               </li>
               <li className={isActive(ROUTES.POTD) ? styles.active : ''}>
                 <Link href={ROUTES.POTD}>
-                  <FaRegLightbulb size="1.5em" /> {(!mobileMode) ? (<span>POTD</span>) : ""}
+                  <FaRegLightbulb size="1.5em" /><span>POTD</span>
                 </Link>
               </li>
               <li className={isActive(ROUTES.QUIZ) ? styles.active : ''}>
                 <Link href={ROUTES.QUIZ}>
-                  <FaRegQuestionCircle size="1.5em" /> {(!mobileMode) ? (<span>Quiz</span>) : ""}
+                  <FaRegQuestionCircle size="1.5em" /><span>Quiz</span>
                 </Link>
               </li>
               {isAdmin && (
                 <li className={isActive('/admin/potd') ? styles.active : ''} style={{ marginTop: 'auto', borderTop: '1px solid #334155', paddingTop: '10px' }}>
                   <Link href="/admin/potd" style={{ color: '#f59e0b' }}>
-                    <FaCog size="1.5em" /> {(!mobileMode) ? (<span style={{ fontWeight: 'bold' }}>Admin Portal</span>) : ""}
+                    <FaCog size="1.5em" /><span style={{ fontWeight: 'bold' }}> Admin Portal </span>
                   </Link>
                 </li>
               )}
@@ -136,9 +155,19 @@ export default function NavigationMenu() {
           </button>
         </div>
       </div>
-      <div className={(!layoutbar) ? styles.layoutset : styles.layoutset2}>
-        <button onClick={() => {setlayoutbar(!layoutbar);setbuttonbar(!buttonbar);}}><BsArrowRightCircleFill size={"1.5em"}/></button>
+      {!layoutbar && mobileMode && (
+        <div className={styles.layoutset}>
+          <button
+            onClick={() => {
+              setlayoutbar(true);
+              setbuttonbar(false);
+            }}
+          >
+            <Menu size={28} />
+          </button>
+        </div>
+      )}
       </div>
-    </div>
+    </>
   );
 }

@@ -24,10 +24,6 @@
     align-items: flex-start;
 }
 
-.navbar{
-    display: none;
-}
-
 .sideMascot {
     position: sticky;
     top: 2rem;
@@ -295,30 +291,6 @@
         width: 100%;
         height: auto;
         gap: 0;
-    }
-
-    .navbar {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-
-        width: 95vw;
-        box-sizing: border-box;
-
-        font-size: 0.7rem;
-        gap: 5px;
-        padding: 10px;
-        margin-bottom: 10px;
-
-        border: 2px solid rgba(0, 0, 0, 0.24);
-        border-radius: 25px;
-    }
-
-    .navbar a {
-        border: 1px solid grey;
-        border-radius: 25px;
-        padding: 1px;
     }
 
     .leaderboardContent {
