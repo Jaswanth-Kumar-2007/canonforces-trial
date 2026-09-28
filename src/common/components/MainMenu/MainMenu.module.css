@@ -423,7 +423,7 @@
   margin: 0;
 } 
 
-@media (max-width:480px){
+@media (max-width:768px){
   .suggestions{
     display: none;
     width: 0%;
@@ -444,6 +444,7 @@
     width: 100vw;
     padding:2px;
     padding-top: 30px;
+    padding-left: 15px;
     border-radius: 30px;
     height: 100vh;
   }
