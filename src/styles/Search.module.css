@@ -71,4 +71,13 @@
   .closeBtn{
     margin-left: 5px;
   }
+
+  .searchInput{
+    flex:1;
+    max-width:90%;
+  }
+
+  .container{
+    margin-top: 20px;
+  }
 }
