@@ -545,4 +545,19 @@
   .ranking:hover {
     box-shadow: 0 12px 28px rgba(206, 86, 59, 0.35);
   }
+
+  .stats1,
+  .stats2 {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+
+  .stats2 {
+    margin-top: 20px;
+  }
+
+  .questions,.ranking,.contest{
+    margin:5px;
+  }
 }

@@ -329,11 +329,15 @@
   .progressDashboard{
     width:100%;
     margin:5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   .progressCard{
     padding: 1rem;
-    width:90%;
+    width:100%;
   }
 
   .actionBar {

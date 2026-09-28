@@ -281,6 +281,7 @@
         min-width: 0;
         margin: 0;
         padding: 10px;
+        padding-top: 25px;
         max-width: none;
         box-sizing: border-box;
     }
